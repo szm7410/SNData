@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{28987C65-74D2-44F7-9A78-AA4386E68DBA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLinq, Version=3.0.1.0, Culture=neutral, PublicKeyToken=1c5d57eb9e11fe4b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLinq.3.0.1-b5\lib\net\SQLinq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLinq.Dapper, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLinq.Dapper.1.5.1-b5\lib\net\SQLinq.Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonData.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="DataBase.cs" />
+    <Compile Include="DataModel\AppAllowUser.cs" />
+    <Compile Include="DataModel\AppUsedByDay.cs" />
+    <Compile Include="DataModel\AppUsedByMonth.cs" />
+    <Compile Include="DataModel\AppUsedByWeek.cs" />
+    <Compile Include="DataModel\DataSource.cs" />
+    <Compile Include="DataModel\FeatureUsedByDay.cs" />
+    <Compile Include="DataModel\FeatureUsedByMonth.cs" />
+    <Compile Include="DataModel\FeatureUsedByWeek.cs" />
+    <Compile Include="DataModel\UserAction.cs" />
+    <Compile Include="DataModel\UserData.cs" />
+    <Compile Include="Implementation\AppAllowUserDataAccess.cs" />
+    <Compile Include="Implementation\AppUsedByDayDataAccess.cs" />
+    <Compile Include="Implementation\AppUsedByMonthDataAccess.cs" />
+    <Compile Include="Implementation\AppUsedByWeekDataAccess.cs" />
+    <Compile Include="Implementation\DataSourceDataAccess.cs" />
+    <Compile Include="Implementation\FeatureUsedByDayDataAccess.cs" />
+    <Compile Include="Implementation\FeatureUsedByMonthDataAccess.cs" />
+    <Compile Include="Implementation\FeatureUsedByWeekDataAccess.cs" />
+    <Compile Include="Implementation\UserActionDataAccess.cs" />
+    <Compile Include="Implementation\UserDataDataAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlSession.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
